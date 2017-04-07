@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="whiteColor">#ffffff</color>
+    <color name="menu_screen_background">#f7f7f7</color>
+    <color name="menu_screen_item_hovered">#186c9b</color>
+    <color name="toolbarColor">#46b6a6</color>
+    <color name="forget_password_background">#edefed</color>
+    <color name="main_heading_text_color">#46b6a6</color>
+    <color name="transparent">#00000000</color>
+    <color name="lineColor">#9e9e9e</color>
+
+
+</resources>

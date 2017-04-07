@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">CareTom</string>
+    <string-array name="menu_headings">
+        <item>SERVICES</item>
+        <item>PACKAGES</item>
+        <item>BLOGS</item>
+        <item>LOGIN</item>
+        <item>ABOUT US</item>
+        <item>CONTACT US</item>
+    </string-array>
+
+    <string-array name="services_main_headings">
+        <item>YOUR DHR</item>
+        <item>DIET CHART</item>
+        <item>EMERGENCY</item>
+        <item>BOOK A DOC.</item>
+        <item>FREE PACKAGES</item>
+        <item>HEALTH TIPS</item>
+    </string-array>
+
+
+    <string-array name="navigation_options">
+        <item>SERVICES</item>
+        <item>PACKAGES</item>
+        <item>BLOG</item>
+        <item>LOGIN</item>
+        <item>ABOUT US</item>
+        <item>CONTACT</item>
+
+
+    </string-array>
+
+    <string name="closeDrawer">Navigation View</string>
+    <string name="openDrawer">Navigation View Closed</string>
+    <string name="send">SEND</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_address">Your Address</string>
+    <string name="your_email">Email Id</string>
+    <string name="mobile_no">Mobile No.</string>
+    <string name="contact_us_heading">Get in touch and we\'ll get back to you as soon as we can</string>
+    <string name="name_empty">Please enter Name</string>
+    <string name="address_empty">Please enter Address</string>
+    <string name="email_empty">Please enter Email</string>
+    <string name="mobile_no_empty">Please enter Mobile No.</string>
+    <string name="small_mobile_no">Mobile No should be 10 digits long</string>
+    <string name="email_incorrect_format">Please enter email in proper format</string>
+    <string name="note">Note</string>
+
+</resources>
