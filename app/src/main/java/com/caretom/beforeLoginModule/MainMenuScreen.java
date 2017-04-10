@@ -29,15 +29,16 @@ import com.caretom.adapter.NavigationAdapter;
  */
 
 public class MainMenuScreen extends AppCompatActivity implements NavigationAdapter.NavigationItemClickListener, ServicesFragment.ServiceFragmentClickListener {
+    private final String TAG_PACKAGES_FRAGMENT = "packages";
     private final String TAG_SERVICES_FRAGMENT = "services";
     private final String TAG_CONTACT_US_FRAGMENT = "ContactUs";
     private final String TAG_FRAGMENT_ABOUT_US = "AboutUs";
-    private final int TAG_MY_ACCOUNT = 0;
-    private final int TAG_BLOGS = 1;
-    private final int TAG_ABOUT_US = 2;
-    private final int TAG_CONTACT_US = 3;
-    private final int TAG_SOCIAL_TOM = 4;
-    private final int TAG_LOGIN_LOGOUT = 5;
+    private final int TAG_SERVICES = 0;
+    private final int TAG_PACKAGES = 1;
+    private final int TAG_BLOG = 2;
+    private final int TAG_LOGIN = 3;
+    private final int TAG_ABOUT_US = 4;
+    private final int TAG_CONTACT = 5;
 
 
     private final String TAG_FREE_PACKAGES_FRAGMENT = "freePackages";
@@ -54,6 +55,7 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
     private FrameLayout frame_container;
     private RecyclerView recyclerView;
     private NavigationAdapter adapter;
+    TextView tv_title;
 
     private Context context;
 
@@ -91,17 +93,17 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
     private void setUpActionBar() {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        View logo = getLayoutInflater().inflate(R.layout.toolbar_row, null);
-        LinearLayout ll_back = (LinearLayout) logo.findViewById(R.id.ll_back);
+        View logo = getLayoutInflater().inflate(R.layout.toolbar_row2, null);
+       /* LinearLayout ll_back = (LinearLayout) logo.findViewById(R.id.ll_back);
         ll_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             }
-        });
+        });*/
 
-        TextView tv_title = (TextView) logo.findViewById(R.id.tv_title);
+        tv_title = (TextView) logo.findViewById(R.id.tv_title);
         tv_title.setText("Menu");
 
 
@@ -200,13 +202,26 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
     @Override
     public void onNavigationItemClick(int tag) {
         switch (tag) {
-            case TAG_MY_ACCOUNT:
+            case TAG_SERVICES:
+                drawerLayout.closeDrawers();
+                loadDefaultServicesFragment();
+
+                break;
+
+            case TAG_PACKAGES:
+                drawerLayout.closeDrawers();
+                loadPackagesFragment();
+                break;
+
+            case TAG_BLOG:
                 drawerLayout.closeDrawers();
 
                 break;
 
-            case TAG_BLOGS:
+            case TAG_LOGIN:
                 drawerLayout.closeDrawers();
+
+
                 break;
 
             case TAG_ABOUT_US:
@@ -214,18 +229,9 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
                 loadAboutUsFragment();
                 break;
 
-            case TAG_CONTACT_US:
+            case TAG_CONTACT:
                 drawerLayout.closeDrawers();
                 loadContactUsFragment();
-
-                break;
-
-            case TAG_SOCIAL_TOM:
-                drawerLayout.closeDrawers();
-                break;
-
-            case TAG_LOGIN_LOGOUT:
-                drawerLayout.closeDrawers();
                 break;
 
 
@@ -234,6 +240,7 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
 
 
     private void loadAboutUsFragment() {
+        tv_title.setText("ABOUT CARETOM");
         AboutUsFragment aboutUsFragment = new AboutUsFragment();
 
 
@@ -243,6 +250,7 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
     }
 
     private void loadContactUsFragment() {
+        tv_title.setText("CONTACT CARETOM");
         ContactUsFragment contactUsFragment = new ContactUsFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, contactUsFragment, TAG_CONTACT_US_FRAGMENT);
@@ -250,11 +258,21 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
     }
 
     private void loadDefaultServicesFragment() {
+        tv_title.setText("SERVICES");
         ServicesFragment servicesFragment = new ServicesFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, servicesFragment, TAG_SERVICES_FRAGMENT);
         transaction.commit();
 
+    }
+
+
+    private void loadPackagesFragment() {
+        tv_title.setText("PACKAGES");
+        FreePackagesFragment packagesFragment = new FreePackagesFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, packagesFragment, TAG_PACKAGES_FRAGMENT);
+        transaction.commit();
     }
 
     @Override
@@ -269,10 +287,10 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
             case EMERGENCY:
                 break;
             case DIET_CHART:
-                loadContactUsFragment();
+              //  loadContactUsFragment();
                 break;
             case FREE_PACKAGES:
-                loadFreePackagesFragment();
+                loadPackagesFragment();
 
                 break;
 
@@ -283,7 +301,7 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
 
     }
 
-    private void loadFreePackagesFragment() {
+   /* private void loadFreePackagesFragment() {
 
         FreePackagesFragment freePackages = new FreePackagesFragment();
 
@@ -292,5 +310,5 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.add(R.id.frame_container, freePackages, TAG_FREE_PACKAGES_FRAGMENT);
         transaction.commit();
-    }
+    }*/
 }

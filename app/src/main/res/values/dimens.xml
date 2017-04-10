@@ -6,5 +6,6 @@
     <dimen name="screen_margin_right">10dp</dimen>
     <dimen name="toolbar_title_text_size">17sp</dimen>
     <dimen name="screen_title_text_size">20sp</dimen>
+    <dimen name="screen_package_text_size">18sp</dimen>
 
 </resources>

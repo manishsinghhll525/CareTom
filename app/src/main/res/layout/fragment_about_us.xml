@@ -2,34 +2,54 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/screen_margin_left"
-    android:layout_marginRight="@dimen/screen_margin_right"
+
     android:background="@drawable/background"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorAccent"
+        android:scaleType="fitXY"
+        android:src="@drawable/banner_aboutus" />
+
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/screen_margin_left"
+        android:layout_marginRight="@dimen/screen_margin_right">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorAccent"
-                android:src="@drawable/banner_aboutus" />
 
-            <com.caretom.customViews.CustomTextView
-                android:id="@+id/tv_title"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:textColor="@color/main_heading_text_color"
-                android:textSize="@dimen/screen_title_text_size"
-                android:textStyle="bold" />
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart_icon" />
+
+
+                <com.caretom.customViews.CustomTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/cms_page_heading_color"
+
+
+                    android:textSize="@dimen/screen_title_text_size" />
+
+            </LinearLayout>
 
 
             <com.caretom.customViews.CustomTextView
@@ -37,7 +57,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:textSize="16sp"
+                android:layout_marginBottom="15dp"
                 android:lineSpacingExtra="2dp" />
+
 
         </LinearLayout>
     </ScrollView>

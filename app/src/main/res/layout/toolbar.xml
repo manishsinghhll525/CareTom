@@ -5,7 +5,7 @@
     collapseIcon="@drawable/back_arrow"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@drawable/header"
+    android:background="@color/toolbarColor"
     android:elevation="4dp"
     app:theme="@style/ThemeOverlay.AppCompat">
 

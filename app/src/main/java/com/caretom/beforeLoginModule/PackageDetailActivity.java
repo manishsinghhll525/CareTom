@@ -101,7 +101,7 @@ public class PackageDetailActivity extends AppCompatActivity {
             ImageView imageView = new ImageView(context);
             imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             imageView.setImageResource(R.drawable.verified_icon);
-            // imageView.setPadding(5, 3, 10, 3);
+             imageView.setPadding(15, 3, 10, 3);
             linearLayout.addView(imageView);
 
 
@@ -145,7 +145,7 @@ public class PackageDetailActivity extends AppCompatActivity {
             ImageView imageView = new ImageView(context);
             imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             imageView.setImageResource(R.drawable.verified_icon);
-            // imageView.setPadding(5, 3, 10, 3);
+            imageView.setPadding(15, 3, 10, 3);
             linearLayout.addView(imageView);
 
 

@@ -25,8 +25,6 @@ public class ServicesFragment extends Fragment {
     }
 
 
-
-
     View view;
     private GridView gridView;
     private ServicesAdapter adapter;

@@ -63,9 +63,10 @@ public class PackageListingAdapter extends BaseAdapter {
         if (model.getFreeStatus().equalsIgnoreCase("1")) {
 
             // this represents browse free
-            holder.tv_package_price.setText("");
+            holder.tv_package_price.setVisibility(View.GONE);
         } else {
-            holder.tv_package_price.setText("RS." + model.getPrice() + "/MONTH");
+            holder.tv_package_price.setVisibility(View.VISIBLE);
+            holder.tv_package_price.setText("(RS." + model.getPrice() + "/MONTH)");
         }
 
         convertView.setOnClickListener(new View.OnClickListener() {
