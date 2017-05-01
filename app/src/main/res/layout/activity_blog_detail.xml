@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+    <ImageView
+        android:id="@+id/img_blog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY" />
+
+
+    <com.caretom.customViews.CustomTextView
+        android:id="@+id/tv_blog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <com.caretom.customViews.CustomTextView
+        android:id="@+id/tv_blog_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
