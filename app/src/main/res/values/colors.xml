@@ -14,7 +14,9 @@
     <color name="cms_page_heading_color">#1e1f21</color>
     <color name="cms_pages_button_color">#222c35</color>
     <color name="packege_text_color">#80222c34</color>
-
+    <color name="gender_frame_background">#f3f3f3</color>
+    <color name="body_text_color_grey">#575757</color>
+    <color name="lightgray02">#bfbfbf</color>
 
 
 </resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "844588261045",
+    "firebase_url": "https://caretom-e3af9.firebaseio.com",
+    "project_id": "caretom-e3af9",
+    "storage_bucket": "caretom-e3af9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844588261045:android:edbe3cac8c02bf61",
+        "android_client_info": {
+          "package_name": "com.caretom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844588261045-nn99ld3cgmtob9bdp7lfe9cfu5dq56kh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2H4QFHheo8BJiQ4ttsCCysUdVA0qcIwI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

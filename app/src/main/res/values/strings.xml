@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">CareTom</string>
+    <string name="facebook_app_id">116621532224239</string>
+    <string name="facebook_app_secret">57d7cf1e407fe9c0c7318e53236a5af5</string>
+
     <string-array name="menu_headings">
         <item>SERVICES</item>
         <item>PACKAGES</item>
@@ -26,8 +29,6 @@
         <item>LOGIN</item>
         <item>ABOUT US</item>
         <item>CONTACT US</item>
-
-
     </string-array>
 
     <string name="closeDrawer">Navigation View</string>
@@ -45,5 +46,23 @@
     <string name="small_mobile_no">Mobile No should be 10 digits long</string>
     <string name="email_incorrect_format">Please enter email in proper format</string>
     <string name="note">Note</string>
+    <string name="readMore">Read More</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="terms_service">By Logging in you agree to Care Tom Terms of services and Privacy Policy</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="enter_firstname">Enter First Name</string>
+    <string name="enter_lastname">Enter Last Name</string>
+    <string name="enter_confirm_password">Enter Confirm Password</string>
+    <string name="enter_degree">Enter Degree</string>
+    <string name="enter_specialization">Your Specialization</string>
+    <string name="enter_fee">Your Fee</string>
+    <string name="my_patient_list">My Patient List</string>
+    <string name="my_upcoming_appointments">My Upcoming Appointments</string>
+    <string name="upload_blog">Upload a Blog</string>
+    <string name="edit_profile">Edit My Profile</string>
+    <string name="my_walllet_earning">My Walllet/Earnings</string>
+    <string name="enter_diease">Enter Diease description</string>
 
 </resources>

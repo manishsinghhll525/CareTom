@@ -3,32 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!--  <LinearLayout
-          android:id="@+id/ll_back"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentLeft="true"
-          android:layout_marginLeft="@dimen/screen_margin_left">
-
-          <ImageView
-              android:id="@+id/imageView"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:padding="5dp"
-              android:src="@drawable/back_arrow"
-
-              />
-      </LinearLayout>
-  -->
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:gravity="center"
-
         android:textColor="@color/whiteColor"
         android:textSize="@dimen/toolbar_title_text_size" />
+
+
+    <TextView
+        android:textColor="@color/whiteColor"
+        android:textSize="@dimen/toolbar_title_text_size"
+        android:id="@+id/tv_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
 
 
 </LinearLayout>

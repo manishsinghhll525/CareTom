@@ -1,11 +1,12 @@
 package com.caretom.beforeLoginModule;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
+
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
@@ -16,12 +17,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.caretom.R;
+import com.caretom.Signup.DoctorSignupActivity;
+import com.caretom.Signup.UserTypeSelectionScreen;
 import com.caretom.adapter.NavigationAdapter;
 
 /**
@@ -29,6 +34,8 @@ import com.caretom.adapter.NavigationAdapter;
  */
 
 public class MainMenuScreen extends AppCompatActivity implements NavigationAdapter.NavigationItemClickListener, ServicesFragment.ServiceFragmentClickListener {
+    private final String TAG_LOGIN_FRAGMENT = "loginFragment";
+    private final String TAG_BLOGS_FRAGMENT = "blogs";
     private final String TAG_PACKAGES_FRAGMENT = "packages";
     private final String TAG_SERVICES_FRAGMENT = "services";
     private final String TAG_CONTACT_US_FRAGMENT = "ContactUs";
@@ -56,6 +63,7 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
     private RecyclerView recyclerView;
     private NavigationAdapter adapter;
     TextView tv_title;
+    TextView tv_signup;
 
     private Context context;
 
@@ -102,6 +110,17 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             }
         });*/
+
+
+        tv_signup = (TextView) logo.findViewById(R.id.tv_signup);
+        tv_signup.setText("SIGN UP");
+
+        tv_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, UserTypeSelectionScreen.class));
+            }
+        });
 
         tv_title = (TextView) logo.findViewById(R.id.tv_title);
         tv_title.setText("Menu");
@@ -215,11 +234,13 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
 
             case TAG_BLOG:
                 drawerLayout.closeDrawers();
+                loadBlogsFragment();
 
                 break;
 
             case TAG_LOGIN:
                 drawerLayout.closeDrawers();
+                loadLoginFragment();
 
 
                 break;
@@ -240,10 +261,9 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
 
 
     private void loadAboutUsFragment() {
+        tv_signup.setVisibility(View.GONE);
         tv_title.setText("ABOUT CARETOM");
         AboutUsFragment aboutUsFragment = new AboutUsFragment();
-
-
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, aboutUsFragment, TAG_FRAGMENT_ABOUT_US);
         transaction.commit();
@@ -251,6 +271,7 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
 
     private void loadContactUsFragment() {
         tv_title.setText("CONTACT CARETOM");
+        tv_signup.setVisibility(View.GONE);
         ContactUsFragment contactUsFragment = new ContactUsFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, contactUsFragment, TAG_CONTACT_US_FRAGMENT);
@@ -259,6 +280,7 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
 
     private void loadDefaultServicesFragment() {
         tv_title.setText("SERVICES");
+        tv_signup.setVisibility(View.GONE);
         ServicesFragment servicesFragment = new ServicesFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, servicesFragment, TAG_SERVICES_FRAGMENT);
@@ -268,11 +290,33 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
 
 
     private void loadPackagesFragment() {
+        tv_signup.setVisibility(View.GONE);
         tv_title.setText("PACKAGES");
         FreePackagesFragment packagesFragment = new FreePackagesFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, packagesFragment, TAG_PACKAGES_FRAGMENT);
         transaction.commit();
+    }
+
+
+    private void loadBlogsFragment() {
+        tv_signup.setVisibility(View.GONE);
+        tv_title.setText("BLOGS");
+        BlogsFragment blogsFragment = new BlogsFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, blogsFragment, TAG_BLOGS_FRAGMENT);
+        transaction.commit();
+
+    }
+
+
+    private void loadLoginFragment() {
+        tv_signup.setVisibility(View.VISIBLE);
+        tv_title.setText("LOGIN");
+        LoginFragment loginFragment = new LoginFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, loginFragment, TAG_LOGIN_FRAGMENT).commit();
+
     }
 
     @Override
@@ -287,7 +331,7 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
             case EMERGENCY:
                 break;
             case DIET_CHART:
-              //  loadContactUsFragment();
+                //  loadContactUsFragment();
                 break;
             case FREE_PACKAGES:
                 loadPackagesFragment();
@@ -301,14 +345,17 @@ public class MainMenuScreen extends AppCompatActivity implements NavigationAdapt
 
     }
 
-   /* private void loadFreePackagesFragment() {
 
-        FreePackagesFragment freePackages = new FreePackagesFragment();
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        BlogsFragment blogsFragment = (BlogsFragment) getSupportFragmentManager().findFragmentByTag(TAG_BLOGS_FRAGMENT);
+        if (blogsFragment != null) {
+            blogsFragment.onActivityResult(requestCode, resultCode, data);
 
-        FragmentManager manager = getSupportFragmentManager();
+        }
 
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.frame_container, freePackages, TAG_FREE_PACKAGES_FRAGMENT);
-        transaction.commit();
-    }*/
+    }
+
+
 }
